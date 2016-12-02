@@ -1,2 +1,4 @@
 node_modules
 bower_components
+.less_cache
+static/dist

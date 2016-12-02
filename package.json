@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "colors": "^1.1.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.13",
     "gulp-if": "^2.0.2",
@@ -16,6 +17,7 @@
     "gulp-replace": "^0.5.4",
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.1.2",
-    "require-dir": "^0.3.1"
+    "require-dir": "^0.3.1",
+    "run-sequence": "^1.2.2"
   }
 }

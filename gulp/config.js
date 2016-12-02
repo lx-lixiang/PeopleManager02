@@ -1,7 +1,7 @@
 var mainDir = 'static/';
 var app = mainDir+'app/';
-var dist = mainDir+'dist/';s
-var lessCache = '.lessCache';s
+var dist = mainDir+'dist/';
+var lessCache = '.lessCache';
 module.export = function(){
-    
+
 }
