@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="manager">
+    <head>
+        <meta charset="utf-8">
+        <title>大家好</title>
+        <!-- build:css css/main.css -->
+        <link rel="stylesheet" href="/amazeui/dist/css/amazeui.min.css">
+        <link rel="stylesheet" href="/css/master.css">
+        <link rel="stylesheet" href="/template/header/header.less">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div class="mainBox">
+            <div ng-include="'template/header/header.html'" class="header"></div>
+            <div ng-include="'template/aside/aside.html'" class="aside"></div>
+            <div ng-view class="content"></div>
+            <div ng-include="'template/footer/footer.html'" class="footer"></div>
+        </div>
+        <!-- build:js js/main.js -->
+        <script src="/angular/angular.js"></script>
+        <script src="/angular-route/angular-route.js"></script>
+        <script src="/app.module.js" charset="utf-8"></script>
+        <script src="/app.route.js" charset="utf-8"></script>
+        <script src="/app.run.js" charset="utf-8"></script>
+
+        <script src="/pages/mainPage/mainPage.controller.js" charset="utf-8"></script>
+        <!-- endbuild -->
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="manager">
+    <head>
+        <meta charset="utf-8">
+        <title>大家好</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="mainBox">
+            <div ng-include="'template/header/header.html'" class="header"></div>
+            <div ng-include="'template/aside/aside.html'" class="aside"></div>
+            <div ng-view class="content"></div>
+            <div ng-include="'template/footer/footer.html'" class="footer"></div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
