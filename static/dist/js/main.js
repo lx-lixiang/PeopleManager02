@@ -33465,17 +33465,21 @@ angular.module('manager').config(function($routeProvider){
     .when('/customerList',{
         templateUrl:'pages/customerList/customerList.html'
     });
+    $routeProvider.otherwise('/');
 });
 
 angular.module('manager').run(function($rootScope,$location,$window){
-    
+    $rootScope.login = false;
+    $rootScope.username = '';
 })
 
 angular.module('manager').controller('asideCtrl',function($scope,$rootScope,$location){
     //1.定义当前用户权限
     $scope.permissionId = 2;//1-主管 2-销售人员
     //2.定义当前进入服务的人员
-    $scope.userName = '邱上哲';
+    $rootScope.$on('login',function(){
+        $scope.userName = $rootScope.username;
+    });
     //3.定义当前列表中的选项
     $scope.chooseIndex = 0;//当前选择的是第几个大选项从0开始
     //点击大列表
@@ -33556,7 +33560,7 @@ angular.module('manager').controller('mainPageCtrl',function($scope,$rootScope){
         customerNum:120,
         addCustomer:50,
         addOrder:80,
-        winner:'邱上哲'
+        winner:'李响'
     }
     //2.今日销售信息
     $scope.sellInfo = [
@@ -33575,5 +33579,22 @@ angular.module('manager').controller('mainPageCtrl',function($scope,$rootScope){
         target:150,
         actual:20
     }
+    //4.本月活动
+    $scope.activeList = [
+        {activename:"来了就送鸡蛋",activetime:"12月05日中午12:00",activeplace:"第3宴会厅",activeOwner:"王经理"},
+        {activename:"来了就送鸭蛋",activetime:"12月18日中午12:00",activeplace:"第1宴会厅",activeOwner:"王经理"},
+        {activename:"来了就送豆油",activetime:"12月20日中午12:00",activeplace:"第2宴会厅",activeOwner:"王经理"},
+        {activename:"来了就送火腿肠",activetime:"12月31日中午12:00",activeplace:"第4宴会厅",activeOwner:"王经理"},
+    ];
 });
 
+
+angular.module('manager').controller('loginCtrl',function($scope,$rootScope,$location){
+    $scope.username = '';
+    $scope.password = '';
+    $scope.login = function(){
+        $rootScope.username = $scope.username;
+        $rootScope.login = true;
+        $rootScope.$emit('login');
+    }
+});

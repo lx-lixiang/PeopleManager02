@@ -13,7 +13,7 @@
             <dt>{{baseInfo.addOrder}}单</dt>
         </dl>
         <dl class="box4 am-scrollspy-init am-scrollspy-inview am-animation-slide-right">
-            <dd>今日销售冠军</dd>
+            <dd>本周销售冠军</dd>
             <dt>{{baseInfo.winner}}</dt>
         </dl>
     </div>
@@ -39,6 +39,15 @@
                     <td>{{item.addOrder}}</td>
                     <td>{{item.score}}</td>
               </tr>
+            </tbody>
+        </table>
+        <h3 class="title">本月活动</h3>
+        <table class="am-table am-table-striped am-table-hover">
+            <thead>
+                <tr><td>活动名称</td><td>活动时间</td><td>活动地点</td><td>负责人</td></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in activeList"><td>{{item.activename}}</td><td>{{item.activetime}}</td><td>{{item.activeplace}}</td><td>{{item.activeOwner}}</td></tr>
             </tbody>
         </table>
     </div>

@@ -5,4 +5,5 @@ angular.module('manager').config(function($routeProvider){
     .when('/customerList',{
         templateUrl:'pages/customerList/customerList.html'
     });
+    $routeProvider.otherwise('/');
 });

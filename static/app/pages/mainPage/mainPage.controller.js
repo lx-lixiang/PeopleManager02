@@ -4,7 +4,7 @@ angular.module('manager').controller('mainPageCtrl',function($scope,$rootScope){
         customerNum:120,
         addCustomer:50,
         addOrder:80,
-        winner:'邱上哲'
+        winner:'李响'
     }
     //2.今日销售信息
     $scope.sellInfo = [
@@ -23,4 +23,11 @@ angular.module('manager').controller('mainPageCtrl',function($scope,$rootScope){
         target:150,
         actual:20
     }
+    //4.本月活动
+    $scope.activeList = [
+        {activename:"来了就送鸡蛋",activetime:"12月05日中午12:00",activeplace:"第3宴会厅",activeOwner:"王经理"},
+        {activename:"来了就送鸭蛋",activetime:"12月18日中午12:00",activeplace:"第1宴会厅",activeOwner:"王经理"},
+        {activename:"来了就送豆油",activetime:"12月20日中午12:00",activeplace:"第2宴会厅",activeOwner:"王经理"},
+        {activename:"来了就送火腿肠",activetime:"12月31日中午12:00",activeplace:"第4宴会厅",activeOwner:"王经理"},
+    ];
 });

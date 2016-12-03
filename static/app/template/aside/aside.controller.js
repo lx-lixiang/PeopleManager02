@@ -2,7 +2,9 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope,$loc
     //1.定义当前用户权限
     $scope.permissionId = 2;//1-主管 2-销售人员
     //2.定义当前进入服务的人员
-    $scope.userName = '邱上哲';
+    $rootScope.$on('login',function(){
+        $scope.userName = $rootScope.username;
+    });
     //3.定义当前列表中的选项
     $scope.chooseIndex = 0;//当前选择的是第几个大选项从0开始
     //点击大列表
