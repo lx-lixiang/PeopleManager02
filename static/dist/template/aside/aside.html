@@ -1,3 +1,7 @@
-<div>
-    这里是侧边栏
+<p class="title">欢迎{{permissionName}}:{{userName}}</p>
+<div class="asideList" ng-repeat="item in asideListItem">
+    <h3 ng-class="{'choose':(chooseIndex == $index)}" ng-click="chooseBigItem($index)">{{item.title}}</h3>
+    <ul ng-show="chooseIndex == $index">
+        <li ng-repeat="li in item.items" ng-class="{'choose':li.choose}">{{li.title}}</li>
+    </ul>
 </div>

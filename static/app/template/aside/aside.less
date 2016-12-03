@@ -1,0 +1,58 @@
+.aside{
+    position:fixed;
+    width:210px;
+    min-height:100%;
+    background-color: #2a3542;
+    color:#fff;
+    .title{
+        text-align: center;
+        margin-top:25px;
+    }
+    .asideList{
+        h3{
+            background-color: #35404A;
+            margin:0 10px;
+            margin-top:20px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding-left:25px;
+            line-height: 32px;
+            cursor: pointer;
+            font-weight: 400;
+            color:#aeb2b7;
+            position:relative;
+            &:after{
+                content: '+';
+                position: absolute;
+                right:20px;
+            }
+            &.choose{
+                &:after{
+                    content: '-';
+                    position: absolute;
+                    right:20px;
+                }
+            }
+        }
+        ul{
+            background-color: #35404A;
+            margin:0 10px;
+            line-height: 25px;
+            font-size:12px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-left:30px;
+
+            li{
+                color:#999;
+                cursor: pointer;
+                &:hover{
+                    color: #ddd;
+                }
+                &.choose{
+                    color:#bbb;
+                }
+            }
+        }
+    }
+}

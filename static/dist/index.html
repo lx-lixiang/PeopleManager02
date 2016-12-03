@@ -8,7 +8,7 @@
     <body>
         <div class="mainBox">
             <div ng-include="'template/header/header.html'" class="header"></div>
-            <div ng-include="'template/aside/aside.html'" class="aside"></div>
+            <div ng-include="'template/aside/aside.html'" class="aside" ng-controller="asideCtrl"></div>
             <div ng-view class="content"></div>
             <div ng-include="'template/footer/footer.html'" class="footer"></div>
         </div>
