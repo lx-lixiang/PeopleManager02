@@ -33462,16 +33462,15 @@ angular.module('manager',['ngRoute'],function(){
 angular.module('manager').config(function($routeProvider){
     $routeProvider.when('/',{
         templateUrl:'pages/mainPage/mainPage.html'
+    })
+    .when('/customerList',{
+        templateUrl:'pages/customerList/customerList.html'
     });
 });
 
 angular.module('manager').run(function($rootScope,$location,$window){
     console.log("运行angular");
 })
-
-angular.module('manager').controller('mainPageCtrl',function($scope,$rootScope){
-    console.log("第一个控制器");
-});
 
 angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
     //1.定义当前用户权限
@@ -33480,23 +33479,36 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
     $scope.userName = '邱上哲';
     //3.定义当前列表中的选项
     $scope.chooseIndex = 0;//当前选择的是第几个大选项从0开始
+    //点击大列表
     $scope.chooseBigItem = function(index){
+        $scope.asideListItem[index].choose = !$scope.asideListItem[index].choose;
         $scope.chooseIndex = index;
+    }
+    //点击大列表下面的小项
+    $scope.chooseSmallItem = function(index,fatherIndex){
+        for(var bigItem in $scope.asideListItem){
+            for(smallItem in $scope.asideListItem[bigItem].items){
+                $scope.asideListItem[bigItem].items[smallItem].choose = false;
+            }
+        }
+        $scope.asideListItem[fatherIndex].items[index].choose = true;
     }
     $scope.asideListItem = [
         {
             title:"客户管理",
+            choose:false,
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
-                {title:"客户列表",choose:true},
+                {title:"客户列表",choose:true,link:"#/customerList"},
                 {title:"登记客户",choose:false}
             ]
         },
         {
             title:"商品管理",
+            choose:false,
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
-                {title:"商品列表",choose:true},
+                {title:"商品列表",choose:false},
                 {title:"添加商品",choose:false},
                 {title:"商品分类",choose:false},
                 {title:"库存管理",choose:false}
@@ -33504,17 +33516,19 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
         },
         {
             title:"员工管理",
+            choose:false,
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
-                {title:"员工列表",choose:true},
+                {title:"员工列表",choose:false},
                 {title:"员工登记",choose:false}
             ]
         },
         {
             title:"活动管理",
+            choose:false,
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
-                {title:"活动列表",choose:true},
+                {title:"活动列表",choose:false},
                 {title:"添加活动",choose:false},
                 {title:"活动查询",choose:false}
             ]
@@ -33527,3 +33541,8 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
 
 
 });
+
+angular.module('manager').controller('mainPageCtrl',function($scope,$rootScope){
+    console.log("第一个控制器");
+});
+

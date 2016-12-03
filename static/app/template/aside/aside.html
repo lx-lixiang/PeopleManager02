@@ -1,7 +1,7 @@
 <p class="title">欢迎{{permissionName}}:{{userName}}</p>
 <div class="asideList" ng-repeat="item in asideListItem">
-    <h3 ng-class="{'choose':(chooseIndex == $index)}" ng-click="chooseBigItem($index)">{{item.title}}</h3>
-    <ul ng-show="chooseIndex == $index">
-        <li ng-repeat="li in item.items" ng-class="{'choose':li.choose}">{{li.title}}</li>
+    <h3 ng-class="{'choose':item.choose}" ng-click="chooseBigItem($index)">{{item.title}}</h3>
+    <ul ng-show="item.choose">
+        <li ng-repeat="li in item.items" ng-class="{'choose':li.choose}" ng-click="chooseSmallItem($index,$parent.$index)">{{li.title}}</li>
     </ul>
 </div>
