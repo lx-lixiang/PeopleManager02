@@ -1,8 +1,18 @@
 <div class="addCustomer " ng-controller="addCustomerCtrl">
     <div class="title">新客户增加</div>
     <div class="formBox">
-        <div class="item"><span>客户姓名:</span><input type="text"></div>
-        <div class="item"><span>客户等级:</span><select><option value="1">A</option><option value="2">B</option><option value="3">C</option></select></div>
-        <div class="item"><span>客户年龄:</span><input type="number"></div>
+        <div class="item"><span>客户姓名:</span><input type="text" placeholder="姓名"></div>
+        <div class="item"><span>客户年龄:</span><input type="number" placeholder="年龄"></div>
+        <div class="item"><span>客户收入:</span><input type="number" placeholder="年收入"></div>
+        <div class="item"><span>客户住址:</span><textarea placeholder="详细住址"></textarea></div>
+        <button type="button" class="am-btn am-btn-secondary am-btn-block">增加</button>
+    </div>
+    <div class="formBox">
+        <div class="item"><span>客户性别:</span><select><option value="0">-请选择-</option><option value="1">男</option><option value="2">女</option></select></div>
+        <div class="item"><span>客户等级:</span><select><option value="0">-请选择-</option><option value="1">等级A</option><option value="2">等级B</option><option value="3">等级C</option></select></div>
+
+        <div class="item"><span>客户电话:</span><input type="text" placeholder="手机或者座机"></div>
+        <div class="item"><span>公司地址:</span><textarea placeholder="详细住址"></textarea></div>
+        <button type="button" class="am-btn am-btn-success am-btn-block">重新填写</button>
     </div>
 </div>

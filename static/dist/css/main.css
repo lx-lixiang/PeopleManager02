@@ -201,6 +201,7 @@ div.indexContent {
   background-color: #f1f2f7;
   top: 50px;
   width: calc(100% - 210px);
+  min-height: 1000px;
 }
 div.mainBox {
   background-color: #f1f2f7;
@@ -386,7 +387,9 @@ div.mainBox {
   width: 90%;
   background-color: #fff;
   margin: 10px auto;
+  margin-top: 50px;
   border-radius: 10px 10px 0 0;
+  overflow: hidden;
 }
 .addCustomer .title {
   padding: 10px 20px;
@@ -395,8 +398,17 @@ div.mainBox {
   color: #8c8989;
 }
 .addCustomer .formBox {
+  float: left;
   border-radius: 0 0 10px 10px;
+  margin-left: 10%;
+  margin-top: 50px;
   text-align: center;
+  padding-bottom: 50px;
+}
+.addCustomer .formBox button {
+  font-size: 15px;
+  margin-top: 50px;
+  margin-left: 20px;
 }
 .addCustomer .formBox .item {
   padding: 10px 20px;
@@ -405,11 +417,19 @@ div.mainBox {
   padding: 0 20px;
 }
 .addCustomer .formBox .item select {
-  width: 197px;
+  width: 250px;
   height: 35px;
   border: 1px solid #cccccc;
 }
+.addCustomer .formBox .item textarea {
+  width: 250px;
+  color: #555555;
+  height: 80px;
+  padding: 5px 10px;
+  border: 1px solid #cccccc;
+}
 .addCustomer .formBox .item input {
+  width: 250px;
   color: #555555;
   height: 35px;
   padding: 5px 10px;
