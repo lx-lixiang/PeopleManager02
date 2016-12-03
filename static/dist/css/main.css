@@ -130,6 +130,9 @@ table {
 .header .logo {
   margin-right: 50px;
 }
+.header a {
+  font-size: 100%;
+}
 
 .content {
   margin-left: 210px;

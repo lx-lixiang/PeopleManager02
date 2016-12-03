@@ -33485,6 +33485,14 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
     }
     $scope.asideListItem = [
         {
+            title:"客户管理",
+            permission:0,//0-都可以看到 其他-对应permissionId
+            items:[
+                {title:"客户列表",choose:true},
+                {title:"登记客户",choose:false}
+            ]
+        },
+        {
             title:"商品管理",
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
@@ -33495,33 +33503,20 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
             ]
         },
         {
-            title:"客户列表",
-            permission:0,//0-都可以看到 其他-对应permissionId
-            items:[
-                {title:"客户列表",choose:true},
-                {title:"客户列表",choose:false},
-                {title:"客户列表",choose:false},
-                {title:"客户列表",choose:false}
-            ]
-        },
-        {
-            title:"员工列表",
+            title:"员工管理",
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
                 {title:"员工列表",choose:true},
-                {title:"员工列表",choose:false},
-                {title:"员工列表",choose:false},
-                {title:"员工列表",choose:false}
+                {title:"员工登记",choose:false}
             ]
         },
         {
-            title:"什么列表",
+            title:"活动管理",
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
-                {title:"什么列表",choose:true},
-                {title:"什么列表",choose:false},
-                {title:"什么列表",choose:false},
-                {title:"什么列表",choose:false}
+                {title:"活动列表",choose:true},
+                {title:"添加活动",choose:false},
+                {title:"活动查询",choose:false}
             ]
         },
 
