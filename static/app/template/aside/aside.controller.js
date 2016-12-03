@@ -29,7 +29,7 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope,$loc
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
                 {title:"客户列表",choose:false,link:"/customerList"},
-                {title:"登记客户",choose:false}
+                {title:"登记客户",choose:false,link:"/addCustomer"}
             ]
         },
         {

@@ -12,13 +12,14 @@
         <link rel="stylesheet" href=".less_cache/pages/mainPage/mainPage.css">
         <link rel="stylesheet" href=".less_cache/pages/customerList/customerList.css">
         <link rel="stylesheet" href=".less_cache/pages/login/login.css">
+        <link rel="stylesheet" href=".less_cache/pages/addCustomer/addCustomer.css">
         <!-- endbuild -->
     </head>
     <body>
         <div class="mainBox" ng-show="login">
             <div ng-include="'template/header/header.html'" class="header"></div>
             <div ng-include="'template/aside/aside.html'" class="aside" ng-controller="asideCtrl"></div>
-            <div ng-view class="content"></div>
+            <div ng-view class="indexContent"></div>
             <div ng-include="'template/footer/footer.html'" class="footer"></div>
         </div>
         <div class="login" ng-if="!login" ng-include="'pages/login/login.html'"></div>
@@ -34,6 +35,7 @@
         <script src="/pages/mainPage/mainPage.controller.js" charset="utf-8"></script>
         <script src="/pages/customerList/customerList.controller.js" charset="utf-8"></script>
         <script src="/pages/login/login.controller.js" charset="utf-8"></script>
+        <script src="/pages/addCustomer/addCustomer.controller.js" charset="utf-8"></script>
         <!-- endbuild -->
     </body>
 </html>
