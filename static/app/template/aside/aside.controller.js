@@ -1,4 +1,4 @@
-angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
+angular.module('manager').controller('asideCtrl',function($scope,$rootScope,$location){
     //1.定义当前用户权限
     $scope.permissionId = 2;//1-主管 2-销售人员
     //2.定义当前进入服务的人员
@@ -18,6 +18,7 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
             }
         }
         $scope.asideListItem[fatherIndex].items[index].choose = true;
+        $location.path($scope.asideListItem[fatherIndex].items[index].link);
     }
     $scope.asideListItem = [
         {
@@ -25,7 +26,7 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
             choose:false,
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
-                {title:"客户列表",choose:true,link:"#/customerList"},
+                {title:"客户列表",choose:false,link:"/customerList"},
                 {title:"登记客户",choose:false}
             ]
         },
@@ -65,5 +66,13 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
     if($scope.permissionId == 1) {$scope.permissionName = "主管";}
     else if($scope.permissionId == 2) {$scope.permissionName = "";}
 
-
+    $rootScope.$on('$routeChangeSuccess', function (obj,load) {
+        if(load.loadedTemplateUrl == "pages/mainPage/mainPage.html"){
+            for(var bigItem in $scope.asideListItem){
+                for(smallItem in $scope.asideListItem[bigItem].items){
+                    $scope.asideListItem[bigItem].items[smallItem].choose = false;
+                }
+            }
+        }
+    });
 });

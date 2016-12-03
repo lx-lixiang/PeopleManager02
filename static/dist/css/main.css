@@ -86,6 +86,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: "微软雅黑";
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -188,8 +189,138 @@ table {
   color: #ddd;
 }
 
-.content {
+.mainPage {
   margin-left: 210px;
+  background-color: #f1f2f7;
+}
+.mainPage .headerBox {
+  padding: 10px 2%;
+  text-align: center;
+}
+.mainPage .headerBox dl {
+  width: 20%;
+}
+.mainPage .headerBox dl {
+  overflow: hidden;
+  display: inline-block;
+}
+.mainPage .headerBox dl dd {
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   float: left;
+  padding: 0 2%;
+}
+.mainPage .headerBox dl dt {
+  margin: 0;
+  background-color: #fff;
+  line-height: 100px;
+  text-align: center;
+  color: #c6cad6;
+  font-size: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  float: left;
+  padding: 0 2%;
+}
+.mainPage .headerBox .box1 dd {
+  background-color: #6ccac9;
+}
+.mainPage .headerBox .box2 dd {
+  background-color: #ff6c60;
+}
+.mainPage .headerBox .box3 dd {
+  background-color: #f8d347;
+}
+.mainPage .headerBox .box4 dd {
+  background-color: #57c8f2;
+}
+.mainPage .biaoge {
+  width: 70%;
+  padding: 4%;
+  float: left;
+}
+.mainPage .biaoge .title {
+  padding: 10px 10px;
+  font-size: 16px;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+}
+.mainPage .biaoge table {
+  text-align: center;
+  background-color: #fff;
+}
+.mainPage .biaoge table thead {
+  font-weight: bold;
+}
+.mainPage .biaoge table thead th {
+  text-align: center;
+}
+.mainPage .rightBox {
+  width: 25%;
+  padding: 20px 3%;
+  float: left;
+}
+.mainPage .rightBox .box1 {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 200px;
+  background-color: #42cac0;
+}
+.mainPage .rightBox .box1 dl {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+.mainPage .rightBox .box1 dl dt {
+  color: #fff;
+  line-height: 26px;
+}
+.mainPage .rightBox .box1 .tag {
+  margin-top: 20px;
+  background-color: #39b7ac;
+  padding: 10px 0;
+  padding-left: 10px;
+  color: #fff;
+  text-align: center;
+}
+.mainPage .rightBox .box1 .tag .title {
+  font-size: 28px;
+  line-height: 30px;
+}
+.mainPage .rightBox .box1 .tag .content {
+  font-size: 24px;
+  line-height: 30px;
+}
+.mainPage .rightBox .box2 {
+  width: 100%;
+  height: 200px;
+  background-color: #a6d669;
+}
+.mainPage .rightBox .box2 dl {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+.mainPage .rightBox .box2 dl dt {
+  color: #fff;
+  line-height: 26px;
+}
+.mainPage .rightBox .box2 .tag {
+  margin-top: 20px;
+  background-color: #99c262;
+  padding: 10px 0;
+  padding-left: 10px;
+  color: #fff;
+  text-align: center;
+}
+.mainPage .rightBox .box2 .tag .title {
+  font-size: 28px;
+  line-height: 30px;
+}
+.mainPage .rightBox .box2 .tag .content {
+  font-size: 24px;
+  line-height: 30px;
 }
 

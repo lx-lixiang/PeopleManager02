@@ -1,3 +1,69 @@
-<div ng-controller="mainPageCtrl">
-    <h1>这里是主页</h1>
+<div ng-controller="mainPageCtrl" class="mainPage">
+    <div class="headerBox">
+        <dl class="box1 am-scrollspy-init am-scrollspy-inview am-animation-slide-right">
+            <dd>客户总量</dd>
+            <dt>{{baseInfo.customerNum}}人</dt>
+        </dl>
+        <dl class="box2 am-scrollspy-init am-scrollspy-inview am-animation-slide-right">
+            <dd>今日新增客户</dd>
+            <dt>{{baseInfo.addCustomer}}人</dt>
+        </dl>
+        <dl class="box3 am-scrollspy-init am-scrollspy-inview am-animation-slide-right">
+            <dd>今日新增订单</dd>
+            <dt>{{baseInfo.addOrder}}单</dt>
+        </dl>
+        <dl class="box4 am-scrollspy-init am-scrollspy-inview am-animation-slide-right">
+            <dd>今日销售冠军</dd>
+            <dt>{{baseInfo.winner}}</dt>
+        </dl>
+    </div>
+    <div class="biaoge">
+        <div class="title">今日排行</div>
+        <table class="am-table am-table-striped am-table-hover">
+            <thead>
+                <tr>
+                    <th>排名</th>
+                    <th>销售编号</th>
+                    <th>员工姓名</th>
+                    <th>今日添加客户</th>
+                    <th>今日添加订单</th>
+                    <th>今日评分</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in sellInfo">
+                    <td>{{$index+1}}</td>
+                    <td>{{item.num}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.addCustomer}}</td>
+                    <td>{{item.addOrder}}</td>
+                    <td>{{item.score}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="rightBox">
+        <div class="box1">
+            <dl>
+                <dt>目标拉客户数:{{peopleTaskInfo.target}}人</dt>
+                <dt>实际拉客户数:{{peopleTaskInfo.target}}人</dt>
+                <dt>任务剩余数:{{peopleTaskInfo.target - peopleTaskInfo.actual}}人</dt>
+            </dl>
+            <div class="tag">
+                <span class="title">完成度:</span>
+                <span class="content">{{(peopleTaskInfo.actual/peopleTaskInfo.target).toFixed(3)*100}}%</span>
+            </div>
+        </div>
+        <div class="box2">
+            <dl>
+                <dt>目标订单量:{{orderTaskInfo.target}}单</dt>
+                <dt>实际订单量:{{orderTaskInfo.actual}}单</dt>
+                <dt>任务订单:{{orderTaskInfo.target - orderTaskInfo.actual}}单</dt>
+            </dl>
+            <div class="tag">
+                <span class="title">完成度:</span>
+                <span class="content">{{(orderTaskInfo.actual/orderTaskInfo.target).toFixed(3)*100}}%</span>
+            </div>
+        </div>
+    </div>
 </div>

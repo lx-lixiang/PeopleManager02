@@ -33455,8 +33455,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 })(window, window.angular);
 
 angular.module('manager',['ngRoute'],function(){
-    console.log("定义manager module");
-    console.log(this);
+
 });
 
 angular.module('manager').config(function($routeProvider){
@@ -33469,10 +33468,10 @@ angular.module('manager').config(function($routeProvider){
 });
 
 angular.module('manager').run(function($rootScope,$location,$window){
-    console.log("运行angular");
+    
 })
 
-angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
+angular.module('manager').controller('asideCtrl',function($scope,$rootScope,$location){
     //1.定义当前用户权限
     $scope.permissionId = 2;//1-主管 2-销售人员
     //2.定义当前进入服务的人员
@@ -33492,6 +33491,7 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
             }
         }
         $scope.asideListItem[fatherIndex].items[index].choose = true;
+        $location.path($scope.asideListItem[fatherIndex].items[index].link);
     }
     $scope.asideListItem = [
         {
@@ -33499,7 +33499,7 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
             choose:false,
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
-                {title:"客户列表",choose:true,link:"#/customerList"},
+                {title:"客户列表",choose:false,link:"/customerList"},
                 {title:"登记客户",choose:false}
             ]
         },
@@ -33539,10 +33539,41 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope){
     if($scope.permissionId == 1) {$scope.permissionName = "主管";}
     else if($scope.permissionId == 2) {$scope.permissionName = "";}
 
-
+    $rootScope.$on('$routeChangeSuccess', function (obj,load) {
+        if(load.loadedTemplateUrl == "pages/mainPage/mainPage.html"){
+            for(var bigItem in $scope.asideListItem){
+                for(smallItem in $scope.asideListItem[bigItem].items){
+                    $scope.asideListItem[bigItem].items[smallItem].choose = false;
+                }
+            }
+        }
+    });
 });
 
 angular.module('manager').controller('mainPageCtrl',function($scope,$rootScope){
-    console.log("第一个控制器");
+    //1.今日信息
+    $scope.baseInfo = {
+        customerNum:120,
+        addCustomer:50,
+        addOrder:80,
+        winner:'邱上哲'
+    }
+    //2.今日销售信息
+    $scope.sellInfo = [
+        {num:0075,name:'邱上哲',addCustomer:75,addOrder:15,score:80},
+        {num:0028,name:'李响',addCustomer:55,addOrder:2,score:70},
+        {num:0043,name:'桑鸿璐',addCustomer:21,addOrder:1,score:50},
+        {num:0014,name:'刘天琪',addCustomer:11,addOrder:1,score:50},
+        {num:0006,name:'路人甲',addCustomer:7,addOrder:0,score:10}
+    ];
+    //3.今日任务信息
+    $scope.peopleTaskInfo = {
+        target:150,
+        actual:100
+    }
+    $scope.orderTaskInfo = {
+        target:150,
+        actual:20
+    }
 });
 
