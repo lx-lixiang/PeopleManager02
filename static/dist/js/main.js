@@ -33591,6 +33591,20 @@ angular.module('manager').controller('mainPageCtrl',function($scope,$rootScope){
     ];
 });
 
+angular.module('manager').controller('costomerListCtrl',function($scope,$rootScope,$location,$http){
+    $scope.customerList = [
+        {name:"邱上哲",age:14,sex:"女"},
+        {name:"邱上哲",age:14,sex:"女"},
+        {name:"邱上哲",age:14,sex:"女"},
+        {name:"邱上哲",age:14,sex:"女"},
+        {name:"邱上哲",age:14,sex:"女"},
+        {name:"邱上哲",age:14,sex:"女"},
+        {name:"邱上哲",age:14,sex:"女"}
+    ];
+    // $http.get('pages/customerList/customerList.html').success(function(data){
+    //     console.log(data);
+    // });
+});
 
 angular.module('manager').controller('loginCtrl',function($scope,$rootScope,$location){
     $scope.username = '';
@@ -33603,9 +33617,13 @@ angular.module('manager').controller('loginCtrl',function($scope,$rootScope,$loc
 });
 
 angular.module('manager').controller('addCustomerCtrl',function($scope,$rootScope,$location){
+    $scope.username = "";
+    $scope.addCustomer = function(){
+        console.log($scope.username);
+        // $location.path("/");
+    }
 
-
-
-
-
+    $scope.clearAll = function(){
+        $scope.username = "";
+    }
 });
