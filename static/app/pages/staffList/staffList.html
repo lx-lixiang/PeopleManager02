@@ -1,0 +1,57 @@
+<div class="staffList" ng-controller="staffListCtrl">
+    <table class="am-table am-table-bordered am-table-radius am-table-striped">
+        <thead>
+            <tr>
+                <th>员工姓名</th>
+                <th>工号</th>
+                <th>性别</th>
+                <th>身份证号</th>
+                <th>民族</th>
+                <th>出生日期</th>
+                <th>入职日期</th>
+                <th>职位</th>
+                <th>详细信息</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in staffList">
+                <td>{{item.name}}</td>
+                <td>{{item.number}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.idCard}}</td>
+                <td>{{item.nation}}</td>
+                <td>{{item.birth}}</td>
+                <td>{{item.entry}}</td>
+                <td>{{item.position}}</td>
+                <td>
+                    <div id="doc-dropdown-justify">
+                      <div class="am-dropdown" data-am-dropdown="{justify: '#doc-dropdown-justify'}">
+                          <button
+                            type="button"
+                            class="am-btn am-btn-danger"
+                            data-am-modal="{target: '#my-popup'}">
+                            详细信息
+                          </button>
+                          <div class="am-popup" id="my-popup" ng-class="showDetail($index)">
+                            <div class="am-popup-inner">
+                              <div class="am-popup-hd">
+                                <h4 class="am-popup-title">员工详细信息</h4>
+                                <span data-am-modal-close class="am-close">&times;</span>
+                              </div>
+                              <ul class="am-popup-bd am-list am-list-static am-list-border am-list-striped staffDetailList">
+                                 <li>工作年限: <span>{{detailItem.worktime}}</span> </li>
+                                 <li>合同到期时间:<span>{{detailItem.detailEndTime}}</span></li>
+                                 <li>员工信息:<span>{{detailItem.isFormal?"正式员工":"试用期员工"}}</span></li>
+                                 <li>学历:<span>{{detailItem.edu}}</span></li>
+                                 <li>籍贯:<span>{{detailItem.from}}</span></li>
+                                 <li>现居地:<span>{{detailItem.live}}</span></li>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

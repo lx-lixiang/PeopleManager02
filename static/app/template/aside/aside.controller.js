@@ -48,7 +48,7 @@ angular.module('manager').controller('asideCtrl',function($scope,$rootScope,$loc
             choose:false,
             permission:0,//0-都可以看到 其他-对应permissionId
             items:[
-                {title:"员工列表",choose:false},
+                {title:"员工列表",choose:false,link:"/staffList"},
                 {title:"员工登记",choose:false}
             ]
         },

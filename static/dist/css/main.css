@@ -439,3 +439,18 @@ div.mainBox {
   outline: none;
   border-color: #3bb4f2;
 }
+
+.staffList button {
+  height: 25px;
+  widht: 20px;
+  font-size: 5px;
+  line-height: 10px;
+}
+.staffList .staffDetailList li {
+  font-size: 15px;
+  position: relative;
+}
+.staffList .staffDetailList li span {
+  position: absolute;
+  left: 40%;
+}

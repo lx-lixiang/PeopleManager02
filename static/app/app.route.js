@@ -5,6 +5,9 @@ angular.module('manager').config(function($routeProvider){
     .when('/customerList',{
         templateUrl:'pages/customerList/customerList.html'
     })
+    .when('/staffList',{
+        templateUrl:'pages/staffList/staffList.html'
+    })
     .when('/addCustomer',{
         templateUrl:'pages/addCustomer/addCustomer.html'
     });
